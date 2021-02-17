@@ -33,14 +33,14 @@ class Calculator {
         return calculation.GetResults();
     }
 
-    static Square(a){
-        let calculation = new Calculation(a,Square);
+    static Square(a, b){
+        let calculation = new Calculation(a, b, Square);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
 
-    static SquareRoot(a){
-        let calculation = new Calculation(a,SquareRoot);
+    static SquareRoot(a, b){
+        let calculation = new Calculation(a, b, SquareRoot);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
