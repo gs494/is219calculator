@@ -3,7 +3,7 @@
 Step 1: Clone repo  
 Step 2: Run npm install 
 
-#Explain OOP principles using Javascript
+#Explain OOP principles using Javascript    
 
 *__Encapsulation:__ The practice of keeping objects in a private state inside a class. 
 This prevents other objects from having direct access.
@@ -13,7 +13,7 @@ This prevents other objects from having direct access.
 A practice of only exposing a high level mechanism for using an object. 
 This means hiding any operations or implementation details that are not relevant to other objects.
 
-*__Inheritance:__ 
+*__Inheritance:__   
 
 *__Polymorphism:__ 
 
