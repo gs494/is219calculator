@@ -3,6 +3,7 @@
 Step 1: Clone repo  
 Step 2: Run npm install     
 
+
 # Explain OOP principles using Javascript    
 
 *__Encapsulation:__ The practice of keeping objects in a private state inside a class. 
@@ -85,3 +86,4 @@ export default makeDinner;
 If you don't need it you shouldn't have to have it.
 
 *__Dependency Inversion Principle:__ The practice of handig control from the function to the caller of the function.
+
