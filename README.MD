@@ -6,7 +6,8 @@ Step 2: Run npm install
 
 # OOP Design Patterns
 
-*__Builder pattern:__ A class based creational design pattern. These constructors are functions
+## Builder pattern 
+A class based creational design pattern. These constructors are functions
 that are used to instantiate new objects with the mehtods and properties defined by the function. It is a simple pattern
 but its simplicity makes this an easy and versatile pattern.
 
@@ -24,7 +25,8 @@ but its simplicity makes this an easy and versatile pattern.
    module.exports = Calculation;
 ```
 
-*__Adapter pattern:__ A structural pattern where the interface of different classes can be translated into another. 
+## Adapter pattern 
+A structural pattern where the interface of different classes can be translated into another. 
 This lets classes work together that could not otherwise because of incompatible interfaces. 
 This is useful when working between different versions like the example which shows an old calculator class and a new calculator class. 
 This adapter class wraps the New Calculator to add the operation method to the public interface. 
@@ -83,7 +85,8 @@ This adapter class wraps the New Calculator to add the operation method to the p
    
    const adaptedCalc = new CalcAdapter();
 ```
-*__chain of responsibility:__ A behavioural design pattern that provides a chain of loosely coupled objects.
+## Chain of responsibility 
+A behavioural design pattern that provides a chain of loosely coupled objects.
 A good example of how it can be ued is with cumulative sum. 
 It allows a single instruction to be chained together. 
 Useful for acting or handling requests of the client. A common pattern, where almost any method call on a object returns a object so that method calls can be chained together.
