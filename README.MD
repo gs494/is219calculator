@@ -104,7 +104,8 @@ Useful for acting or handling requests of the client. A common pattern, where al
    
    
    const sum2 = new CumulativeSum(10);
-   console.log(sum2.add(10).add(20).add(5).sum); // 45```
+   console.log(sum2.add(10).add(20).add(5).sum); // 45
+```
 
 
 # Explain OOP principles using Javascript    
