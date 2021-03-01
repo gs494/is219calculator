@@ -11,26 +11,34 @@ The singleton pattern limits the number of instances of a particular object to j
 This single instance is called the singleton.
 Singletons are useful in situations where actions need to be coordinated from a single central place.
 
-```module.exports = class City {
-       constructor(data = null) {
-           if(data) {
-               this.id = data.id;
-               this.city = data.city;
-               this.city_ascii = data.city_ascii;
-               this.lat = data.lat;
-               this.lng = data.lng;
-               this.iso2 = data.iso2;
-               this.iso3 = data.iso3;
-               this.capital = data.capital;
-               this.admin_name = data.admin_name;
-           }
-   
-       }
-       //Factory Method to Create a City
-       static create(data) {
-           return new City(data);
-       }
-   }
+```
+class Database {
+  constructor(data) {
+    if (Database.exists) {
+      return Database.instance;
+    }
+    this._data = data;
+    Database.instance = this;
+    Database.exists = true;
+    return this;
+  }
+
+  getData() {
+    return this._data;
+  }
+
+  setData(data) {
+    this._data = data;
+  }
+}
+
+// usage
+const mongo = new Database('mongo');
+console.log(mongo.getData()); // mongo
+
+const mysql = new Database('mysql');
+console.log(mysql.getData()); // mongo
+
 ```
 
 ## Adapter pattern 
