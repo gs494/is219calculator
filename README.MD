@@ -6,23 +6,31 @@ Step 2: Run npm install
 
 # OOP Design Patterns
 
-## Builder pattern 
-A class based creational design pattern. These constructors are functions
-that are used to instantiate new objects with the mehtods and properties defined by the function. It is a simple pattern
-but its simplicity makes this an easy and versatile pattern.
+## Singleton pattern 
+The singleton pattern limits the number of instances of a particular object to just one.
+This single instance is called the singleton.
+Singletons are useful in situations where actions need to be coordinated from a single central place.
 
-```class Calculation {
-       constructor(a, b, op){
-           this.a = a;
-           this.b = b;
-           this.op = op;
+```module.exports = class City {
+       constructor(data = null) {
+           if(data) {
+               this.id = data.id;
+               this.city = data.city;
+               this.city_ascii = data.city_ascii;
+               this.lat = data.lat;
+               this.lng = data.lng;
+               this.iso2 = data.iso2;
+               this.iso3 = data.iso3;
+               this.capital = data.capital;
+               this.admin_name = data.admin_name;
+           }
+   
        }
-       GetResults(){
-           return this.op(this.a,this.b)
+       //Factory Method to Create a City
+       static create(data) {
+           return new City(data);
        }
    }
-   
-   module.exports = Calculation;
 ```
 
 ## Adapter pattern 
