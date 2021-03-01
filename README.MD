@@ -4,6 +4,109 @@ Step 1: Clone repo
 Step 2: Run npm install     
 
 
+# OOP Design Patterns
+
+*__Builder pattern:__ A class based creational design pattern. These constructors are functions
+that are used to instantiate new objects with the mehtods and properties defined by the function. It is a simple pattern
+but its simplicity makes this an easy and versatile pattern.
+
+```class Calculation {
+       constructor(a, b, op){
+           this.a = a;
+           this.b = b;
+           this.op = op;
+       }
+       GetResults(){
+           return this.op(this.a,this.b)
+       }
+   }
+   
+   module.exports = Calculation;
+```
+
+*__Adapter pattern:__ A structural pattern where the interface of different classes can be translated into another. 
+This lets classes work together that could not otherwise because of incompatible interfaces. 
+This is useful when working between different versions like the example which shows an old calculator class and a new calculator class. 
+This adapter class wraps the New Calculator to add the operation method to the public interface. 
+```class OldCalculator {
+     constructor() {
+       this.operations = function(term1, term2, operation) {
+         switch (operation) {
+           case 'add':
+             return term1 + term2;
+           case 'sub':
+             return term1 - term2;
+           default:
+             return NaN;
+         }
+       };
+     }
+   }
+   
+   // new interface
+   class NewCalculator {
+     constructor() {
+       this.add = function(term1, term2) {
+         return term1 + term2;
+       };
+       this.sub = function(term1, term2) {
+         return term1 - term2;
+       };
+     }
+   }
+   
+   // Adapter Class
+   class CalcAdapter {
+     constructor() {
+       const newCalc = new NewCalculator();
+   
+       this.operations = function(term1, term2, operation) {
+         switch (operation) {
+           case 'add':
+             // using the new implementation under the hood
+             return newCalc.add(term1, term2);
+           case 'sub':
+             return newCalc.sub(term1, term2);
+           default:
+             return NaN;
+         }
+       };
+     }
+   }
+   
+   // usage
+   const oldCalc = new OldCalculator();
+   console.log(oldCalc.operations(10, 5, 'add')); // 15
+   
+   const newCalc = new NewCalculator();
+   console.log(newCalc.add(10, 5)); // 15
+   
+   const adaptedCalc = new CalcAdapter();
+```
+*__chain of responsibility:__ A behavioural design pattern that provides a chain of loosely coupled objects.
+A good example of how it can be ued is with cumulative sum. 
+It allows a single instruction to be chained together. 
+Useful for acting or handling requests of the client. A common pattern, where almost any method call on a object returns a object so that method calls can be chained together.
+```class CumulativeSum {
+     constructor(intialValue = 0) {
+       this.sum = intialValue;
+     }
+   
+     add(value) {
+       this.sum += value;
+       return this;
+     }
+   }
+   
+   // usage
+   const sum1 = new CumulativeSum();
+   console.log(sum1.add(10).add(2).add(50).sum); // 62
+   
+   
+   const sum2 = new CumulativeSum(10);
+   console.log(sum2.add(10).add(20).add(5).sum); // 45```
+
+
 # Explain OOP principles using Javascript    
 
 *__Encapsulation:__ The practice of keeping objects in a private state inside a class. 
