@@ -24,6 +24,14 @@ test('Calculator squareroot of a number', () => {
     let result = Calculator.SquareRoot(64, null);
     expect(result).toBe(8);
 });
+
+test('Calculator add array of 1,2,3,4 and get result 10', () => {
+    let calc = new Calculator();
+    let myArray = [1,2,3,4]
+    expect(calc.Sum(myArray)).toBe(10);
+    expect(calc.Result).toBe(10);
+
+});
 test('Calculator adding to calculations', () => {
     //assigning the results of the calc sum method to an object, calculator returns an object
     let result = Calculator.Quotient(1,2);
